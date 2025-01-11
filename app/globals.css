@@ -1,7 +1,9 @@
+/* Enable PostCSS and Tailwind processing */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Add this near the top to help editors */
 @layer base {
   :root {
     --radius: 0.5rem;
@@ -257,7 +259,24 @@
 
   /* Root */
   .root-container {
-    @apply flex min-h-screen flex-1 flex-col bg-pattern bg-cover bg-top bg-dark-100 px-5 xs:px-10 md:px-16;
+    display: flex;
+    min-height: 100vh;
+    flex: 1;
+    flex-direction: column;
+    background-image: var(--bg-pattern);
+    background-size: cover;
+    background-position: top;
+    background-color: var(--bg-dark-100);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    @media (min-width: 480px) {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+    @media (min-width: 768px) {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
   }
 
   /* Book Details */
