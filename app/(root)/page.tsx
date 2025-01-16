@@ -1,11 +1,11 @@
+import BookList from "@/components/BookList";
+import BookOverview from "@/components/BookOverview";
 import Image from "next/image";
 
-const home = () =>
-(
-  <div>
+const home = () =><>
+        <BookOverview/>
+        <BookList/>
 
-  </div>
-);
-
+</>
 
 export default home;
