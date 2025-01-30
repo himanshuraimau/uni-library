@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-
 import localFont from "next/font/local";
-
 import { ReactNode } from "react";
-import exp from "constants";
+
 
 const ibmPlexSans = localFont({
   src: [
@@ -23,13 +21,12 @@ const bebasNeue = localFont({
   variable: "--bebas-neue",
 });
 
-
-
 export const metadata: Metadata = {
   title: "BookWise",
   description:
     "BookWise is a book borrowing university library management solution.",
 };
+
 
 const RootLayout = ({
   children,
@@ -37,18 +34,16 @@ const RootLayout = ({
   children: ReactNode;
 }) => {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
+
       <body
         className={`${ibmPlexSans.className} ${bebasNeue.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-        >
-          {children}
-        </ThemeProvider>
+        {children}
+
+
       </body>
+
     </html>
   );
 }
